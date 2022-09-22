@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 02:15:13 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/22 02:15:13 by marvin           ###   ########.fr       */
+/*   Updated: 2022/09/22 13:17:35 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char    *ft_strchr(const char *s, int c)
     while (s[i] != '\0')
     {
         if (s[i] == c)
-            return ((char *)s + i);
+        return (char s[i]);
         i++;
     }
     if (!c && s[i] == '\0')

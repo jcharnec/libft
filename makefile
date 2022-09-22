@@ -6,7 +6,7 @@
 #    By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 12:21:19 by jcharnec          #+#    #+#              #
-#    Updated: 2022/09/20 13:01:15 by jcharnec         ###   ########.fr        #
+#    Updated: 2022/09/22 13:26:04 by jcharnec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,23 @@
 NAME = libft.a
 
 # NOMBRE DE LOS ARCHIVOS 
-SRC =  ft_strlen.c ft_ialnum.c ft_isalpha.c
+SRC = 	ft_strlen.c 
+		ft_ialnum.c 
+		ft_isalpha.c
+		ft_atoi.c
+		ft_isascii.c
+		ft_isdigit.c
+		ft_isprint.c
+		ft_memset.c
+		ft_strchr.c
+		ft_strlat.c
+		ft_strlcpy.c
+		ft_strlen.c
+		ft_strncmp.c
+		ft_strnstr.c
+		ft_tolower.c
+		ft_topper.c
+		
 # SRC = $(wildcards *.c)
 
 # DIRECTORIO QUE CREAMOS PARA GUARDAR LOS .o
