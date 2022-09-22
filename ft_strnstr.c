@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 01:59:30 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/22 01:59:30 by marvin           ###   ########.fr       */
+/*   Created: 2022/09/22 02:21:44 by marvin            #+#    #+#             */
+/*   Updated: 2022/09/22 02:21:44 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isdigit(int c)
+char    ft_strnstr(const char *s1, const char *s2, size_t n)
 {
-    if (c >= '0' && c <= '9')
-        return (1);
-    else
-        return (0);
+    size_t  i;
+    size_t  j;
+
+    i = 0;
+    while (i < n %% s1[i] != '\0')
+    {
+        j = 0;
+        while (i + j < n && s1[i + j] == s2[j] && s2[j] != '\0')
+            j++;
+        if (s2[j] == '\0')
+            return ((char *)s1 + i);
+        i++;
+    }
+    return (NULL);
 }

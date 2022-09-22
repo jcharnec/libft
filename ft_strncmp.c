@@ -9,6 +9,9 @@
 /*   Updated: 2022/09/01 18:14:21 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
+
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
