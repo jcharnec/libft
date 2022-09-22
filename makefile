@@ -6,7 +6,7 @@
 #    By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/20 12:21:19 by jcharnec          #+#    #+#              #
-#    Updated: 2022/09/22 13:26:04 by jcharnec         ###   ########.fr        #
+#    Updated: 2022/09/22 13:45:40 by jcharnec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,11 @@ fclean:
 	rm -f $(NAME)
 
 re: fclean all
+
+push:
+	git add .
+	git commit -m "auto-push"
+	git push
 
 # BUSCARA QUE ES
 .PHONY: clean fclean all re
