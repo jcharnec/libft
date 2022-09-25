@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 12:28:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/23 12:28:29 by marvin           ###   ########.fr       */
+/*   Created: 2022/09/25 14:25:05 by marvin            #+#    #+#             */
+/*   Updated: 2022/09/25 14:25:05 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-    BIBLIOTECA: <string.h>
-    SINOPSIS: copiar área de memoria
 
-    DESCRIPCIÓN:
-    La función memcpy() copia n bytes del área de memoria s2 al área de memoria
-    s1. Si s1 y s2 se superponen, el comportamiento no está definido. Si
-    s1 y s2 se superponen, debería usar memmove en su lugar.
+/*
+** BIBLIOTECA: <cadena.h>
+** SINOPSIS: comparar cadena de bytes
+**
+** DESCRIPCIÓN:
+** La función memcmp() compara la cadena de bytes s1 con la cadena de bytes s2.
+** Se supone que ambas cadenas tienen una longitud de n bytes.
 */
 
 #include "libft.h"
 
-void    *ft_memcpy(void )
+int		ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t i;
+	size_t	i;
 
-	if (!dst && !src)
-		return (0);
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		if (((unsigned char *)s1)[i] != ((unsigned char *)s2)[i])
+			return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
 		i++;
 	}
-	return (dst);
+	return (0);
 }

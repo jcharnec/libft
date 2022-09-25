@@ -1,37 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 12:28:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/23 12:28:29 by marvin           ###   ########.fr       */
+/*   Created: 2022/09/25 14:21:54 by marvin            #+#    #+#             */
+/*   Updated: 2022/09/25 14:21:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
     BIBLIOTECA: <string.h>
-    SINOPSIS: copiar área de memoria
+    SINOPSIS: localizar byte en cadena de bytes
 
     DESCRIPCIÓN:
-    La función memcpy() copia n bytes del área de memoria s2 al área de memoria
-    s1. Si s1 y s2 se superponen, el comportamiento no está definido. Si
-    s1 y s2 se superponen, debería usar memmove en su lugar.
+    La función memchr() localiza la primera aparición de c (convertida a una
+    unsigned char) en string s.
 */
 
 #include "libft.h"
 
-void    *ft_memcpy(void )
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t i;
 
-	if (!dst && !src)
-		return (0);
 	i = 0;
 	while (i < n)
 	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
+		if (((unsigned char*)s)[i] == (unsigned char)c)
+			return ((void*)(s + i));
 		i++;
 	}
-	return (dst);
+	return (0);
 }
+

@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/23 12:28:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/23 12:28:29 by marvin           ###   ########.fr       */
+/*   Created: 2022/09/25 14:19:10 by marvin            #+#    #+#             */
+/*   Updated: 2022/09/25 14:19:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 /*
     BIBLIOTECA: <string.h>
-    SINOPSIS: copiar área de memoria
+    SINOPSIS: localizar carácter en cadena (última aparición)
 
     DESCRIPCIÓN:
-    La función memcpy() copia n bytes del área de memoria s2 al área de memoria
-    s1. Si s1 y s2 se superponen, el comportamiento no está definido. Si
-    s1 y s2 se superponen, debería usar memmove en su lugar.
+    La función strrchr() localiza la última aparición de c (convertida a una
+    char) en la cadena s. Si c es `\0', strrchr() localiza la terminación
+    \0'.
 */
 
 #include "libft.h"
 
-void    *ft_memcpy(void )
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t i;
+	int			i;
+	const char	*ini;
 
-	if (!dst && !src)
-		return (0);
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)dst)[i] = ((unsigned char *)src)[i];
-		i++;
-	}
-	return (dst);
+	ini = s;
+	i = ft_strlen(s);
+	s = (s + i);
+	while (*s != *ini && c != *s)
+		s--;
+	if (c == *s)
+		return ((char *)s);
+	return (0);
 }
