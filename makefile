@@ -10,28 +10,33 @@
 #                                                                              #
 # **************************************************************************** #
 
-# NOMBRE DEL ARCHIVO
-NAME = libft.a
-
 # NOMBRE DE LOS ARCHIVOS 
-SRC = 	ft_strlen.c 
+SRC = 	ft_atoi.c
+		ft_bzero
 		ft_ialnum.c 
 		ft_isalpha.c
-		ft_atoi.c
 		ft_isascii.c
 		ft_isdigit.c
 		ft_isprint.c
+		ft_memchr.c
+		ft_memcmp.c
+		ft_memcpy.c
+		ft_memmove.c
 		ft_memset.c
 		ft_strchr.c
-		ft_strlat.c
+		ft_strlcat.c
 		ft_strlcpy.c
 		ft_strlen.c
 		ft_strncmp.c
 		ft_strnstr.c
+		ft_strrchr.c
 		ft_tolower.c
 		ft_topper.c
 		
 # SRC = $(wildcards *.c)
+
+# NOMBRE DEL ARCHIVO
+NAME = libft.a
 
 # DIRECTORIO QUE CREAMOS PARA GUARDAR LOS .o
 OBJ_DIR = obj/
@@ -41,17 +46,20 @@ HEADER = libft.h
 
 # COMPILAR LOS ARCHIVOS
 # -MMD CREA LAS DEPENDENCIAS
-CFLAGS = -Werror -Wextra -Wall -MMD
+
+CC = gcc
+CFLAGS = -Werror -Wextra -Wall
 
 OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 #OBJBONUS = $(addprefix $(OBJ_DIR), $(SRCBONS: .c=.o))
 
-DEP = $(addsuffix .d, $(basename $(OBJ)))
+# DEP = $(addsuffix .d, $(basename $(OBJ)))
 
 # CREAMOS DIRECTORIO -p + SI YA EXISTE NO LO HACE
 MD = mkdir -p
-
-AR = ar -rcs
+LIB = ar rcs
+RM = rm -f
+# AR = ar -rcs
 
 # $@ hace referencia a lo que hay antes de los :
 # $< hace referencia a lo que hay antes de los :
@@ -60,30 +68,30 @@ $(OBJ_DIR)%.o: %.c
 	$(MD) $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# NORMAS
-all : $(NAME)
-
--include $(DEP)
-$(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
+# -include $(DEP)
+$(NAME):$(OBJ) $(HEADER)
+		$(LIB) $(NAME) $(OBJ)
 
 # BONUS: $(OBJ) $(OBJBONUS)
 #	$(AR) $(NAME) $(OBJBONUS)
 #	@touch $@
 
+# NORMAS
+all : $(NAME)
+
 clean:
-	rm -rf $(OBJ_DIR)
-	rm -rf bonus
+		$(RM) $(OBJ_DIR)
+
 # BONS ES UN PARCHE PARA QUE NO HAGA RELINK TODO EL RATO
-fclean:
-	rm -f $(NAME)
+fclean:	clean
+		$(RM) $(NAME)
 
 re: fclean all
 
-push:
-	git add .
-	git commit -m "auto-push"
-	git push
+# push:
+#	git add .
+#	git commit -m "auto-push"
+#	git push
 
 # BUSCARA QUE ES
 .PHONY: clean fclean all re
