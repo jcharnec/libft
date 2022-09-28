@@ -6,16 +6,18 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 13:40:24 by jcharnec          #+#    #+#             */
-/*   Updated: 2022/09/20 12:04:37 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/09/28 10:42:24 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "libft.h"
+#include "libft.h"
 
 int	ft_isalpha(int c)
 {
 	if ((c >= 101 && c <= 132) || (c >= 141 && c <= 172))
+	{
 		return (1);
-	else 
+	}
+	else
 		return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:08:01 by jcharnec          #+#    #+#             */
-/*   Updated: 2022/09/20 11:14:43 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/09/28 10:25:14 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_atoi(char *str)
 {
 	int	c;
-	int	 i;
+	int	i;
 	int	res;
 
 	c = 0;
