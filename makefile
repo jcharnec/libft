@@ -6,7 +6,7 @@
 #    By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 11:30:24 by jcharnec          #+#    #+#              #
-#    Updated: 2022/09/28 11:34:37 by jcharnec         ###   ########.fr        #
+#    Updated: 2022/09/28 12:21:58 by jcharnec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ FLAGS = -Werror -Wextra -Wall -MMD
 # NOMBRE DE LOS ARCHIVOS 
 SRC = 	ft_atoi.c \
 		ft_bzero.c \
-		ft_ialnum.c \
+		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
 		ft_isdigit.c \
@@ -44,7 +44,7 @@ SRC = 	ft_atoi.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
 		ft_tolower.c \
-		ft_topper.c
+		ft_toupper.c
 
 # DIRECTORIO QUE CREAMOS PARA GUARDAR LOS .o
 # OBJ_DIR = obj/
