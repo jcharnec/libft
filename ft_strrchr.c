@@ -6,7 +6,7 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 14:19:10 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/29 12:28:51 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/09/29 13:05:37 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,21 +24,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	/*int			i;
-	const char	*ini;
-
-	ini = s;
-	i = ft_strlen(s);
-	s = (s + i);
-	while (*s != *ini && c != *s)
-		s--;
-	if (c == *s)
-		return ((unsigned char *)s);
-	return (NULL);*/
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (s[i])
-		if()
-
+	while (s[i] != '\0')
+		i++;
+	while (i >= 0)
+	{
+		if ((unsigned char)s[i] == (unsigned char)c)
+			return ((char *)s + i);
+		i--;
+	}
+	return (NULL);
 }
