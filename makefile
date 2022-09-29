@@ -6,7 +6,7 @@
 #    By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 11:30:24 by jcharnec          #+#    #+#              #
-#    Updated: 2022/09/28 12:21:58 by jcharnec         ###   ########.fr        #
+#    Updated: 2022/09/29 11:12:05 by jcharnec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ FLAGS = -Werror -Wextra -Wall -MMD
 # NOMBRE DE LOS ARCHIVOS 
 SRC = 	ft_atoi.c \
 		ft_bzero.c \
+		ft_calloc.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -37,6 +38,7 @@ SRC = 	ft_atoi.c \
 		ft_memmove.c \
 		ft_memset.c \
 		ft_strchr.c \
+		ft_strdup.c \
 		ft_strlcat.c \
 		ft_strlcpy.c \
 		ft_strlen.c \
