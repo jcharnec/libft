@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 12:28:29 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/23 12:28:29 by marvin           ###   ########.fr       */
+/*   Updated: 2022/09/29 10:46:39 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*
-    BIBLIOTECA: <string.h>
+
+/*   BIBLIOTECA: <string.h>
     SINOPSIS: copiar área de memoria
 
     DESCRIPCIÓN:
