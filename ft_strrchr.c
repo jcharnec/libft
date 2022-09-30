@@ -11,13 +11,13 @@
 /* ************************************************************************** */
 
 /*
-    BIBLIOTECA: <string.h>
-    SINOPSIS: localizar carácter en cadena (última aparición)
+	BIBLIOTECA: <string.h>
+	SINOPSIS: localizar carácter en cadena (última aparición)
 
-    DESCRIPCIÓN:
-    La función strrchr() localiza la última aparición de c (convertida a una
-    char) en la cadena s. Si c es `\0', strrchr() localiza la terminación
-    \0'.
+	DESCRIPCIÓN:
+	La función strrchr() localiza la última aparición de c (convertida a una
+	char) en la cadena s. Si c es `\0', strrchr() localiza la terminación
+	\0'.
 */
 
 #include "libft.h"
