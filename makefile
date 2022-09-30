@@ -24,6 +24,8 @@ HEADER = libft.h
 
 CFLAGS = -Werror -Wextra -Wall
 
+CC = GCC
+
 OBJ = $(SRC:.c=.o)
 #OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 #OBJBONUS = $(addprefix $(OBJ_DIR), $(SRCBONS: .c=.o))

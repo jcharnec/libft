@@ -22,27 +22,28 @@ el valor no está definido */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-	int	c;
 	int	i;
+	int	s;
 	int	res;
 
-	c = 0;
-	i = 1;
+	i = 0;
+	s = 1;
 	res = 0;
-	while ((str[c] > 7 && str[c] < 14) || str[c] == ' ')
-		c++;
-	while (str[c] == '+' || str[c] == '-')
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
+			str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		if (str[c] == '-')
-			i *= -1;
-		c++;
+		if (str[i] == '-')
+			s = -1;
+		i++;
 	}
-	while (str[c] >= '0' && str[c] <= '9')
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		res = (str[c] - '0') + (res * 10);
-		c++;
+		res = (res * 10) + (str[i] - '0');
+		i++;
 	}
-	return (res * i);
+	return (res * s);
 }
