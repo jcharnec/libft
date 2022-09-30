@@ -39,7 +39,7 @@ SRC = 	ft_atoi.c
 NAME = libft.a
 
 # DIRECTORIO QUE CREAMOS PARA GUARDAR LOS .o
-OBJ_DIR = obj/
+# OBJ_DIR = obj/
 
 # HEADER QUE ALMACENA TODOS LOS ARCHIVOS
 HEADER = libft.h
@@ -50,7 +50,8 @@ HEADER = libft.h
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall
 
-OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
+OBJ = $(SRC:.c=.o)
+#OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 #OBJBONUS = $(addprefix $(OBJ_DIR), $(SRCBONS: .c=.o))
 
 # DEP = $(addsuffix .d, $(basename $(OBJ)))
@@ -64,9 +65,9 @@ RM = rm -f
 # $@ hace referencia a lo que hay antes de los :
 # $< hace referencia a lo que hay antes de los :
 # % = cualquier cosa es com *
-$(OBJ_DIR)%.o: %.c
-	$(MD) $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+#$(OBJ_DIR)%.o: %.c
+#	$(MD) $(dir $@)
+#	$(CC) $(CFLAGS) -c $< -o $@
 
 # -include $(DEP)
 $(NAME):$(OBJ) $(HEADER)
@@ -80,7 +81,7 @@ $(NAME):$(OBJ) $(HEADER)
 all : $(NAME)
 
 clean:
-		$(RM) $(OBJ_DIR)
+		$(RM) $(OBJ)
 
 # BONS ES UN PARCHE PARA QUE NO HAGA RELINK TODO EL RATO
 fclean:	clean
