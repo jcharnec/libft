@@ -5,35 +5,10 @@
 #                                                     +:+ +:+         +:+      #
 #    By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/20 12:21:19 by jcharnec          #+#    #+#              #
-#    Updated: 2022/09/22 13:45:40 by jcharnec         ###   ########.fr        #
+#    Created: 2022/09/28 11:30:24 by jcharnec          #+#    #+#              #
+#    Updated: 2022/09/29 11:12:05 by jcharnec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-# NOMBRE DE LOS ARCHIVOS 
-SRC = 	ft_atoi.c
-		ft_bzero
-		ft_ialnum.c 
-		ft_isalpha.c
-		ft_isascii.c
-		ft_isdigit.c
-		ft_isprint.c
-		ft_memchr.c
-		ft_memcmp.c
-		ft_memcpy.c
-		ft_memmove.c
-		ft_memset.c
-		ft_strchr.c
-		ft_strlcat.c
-		ft_strlcpy.c
-		ft_strlen.c
-		ft_strncmp.c
-		ft_strnstr.c
-		ft_strrchr.c
-		ft_tolower.c
-		ft_topper.c
-		
-# SRC = $(wildcards *.c)
 
 # NOMBRE DEL ARCHIVO
 NAME = libft.a
@@ -60,6 +35,53 @@ OBJ = $(SRC:.c=.o)
 MD = mkdir -p
 LIB = ar rcs
 RM = rm -f
+
+
+FLAGS = -Werror -Wextra -Wall -MMD
+
+# NOMBRE DE LOS ARCHIVOS 
+SRC = 	ft_atoi.c \
+		ft_bzero.c \
+		ft_calloc.c \
+		ft_isalnum.c \
+		ft_isalpha.c \
+		ft_isascii.c \
+		ft_isdigit.c \
+		ft_isprint.c \
+		ft_memchr.c \
+		ft_memcmp.c \
+		ft_memcpy.c \
+		ft_memmove.c \
+		ft_memset.c \
+		ft_strchr.c \
+		ft_strdup.c \
+		ft_strlcat.c \
+		ft_strlcpy.c \
+		ft_strlen.c \
+		ft_strncmp.c \
+		ft_strnstr.c \
+		ft_strrchr.c \
+		ft_tolower.c \
+		ft_toupper.c
+
+# DIRECTORIO QUE CREAMOS PARA GUARDAR LOS .o
+# OBJ_DIR = obj/
+OBJ = $(SRC:.c=.o)
+
+# COMPILAR LOS ARCHIVOS
+# CC = cc
+
+# -MMD CREA LAS DEPENDENCIAS
+
+
+#OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
+#OBJBONUS = $(addprefix $(OBJ_DIR), $(SRCBONS: .c=.o))
+
+DEP = $(SRC:.c=.d)
+#DEP = $(addsuffix .d, $(basename $(OBJ)))
+
+# CREAMOS DIRECTORIO -p + SI YA EXISTE NO LO HACE
+
 # AR = ar -rcs
 
 # $@ hace referencia a lo que hay antes de los :
@@ -80,6 +102,15 @@ $(NAME):$(OBJ) $(HEADER)
 # NORMAS
 all : $(NAME)
 
+%.o : %.c
+	$(MD) $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
+	
+
+$(NAME):$(OBJ) $(HEADER)
+	$(LIB) $(NAME) $(OBJ)
+	@ranlib $(NAME)
+
 clean:
 		$(RM) $(OBJ)
 
@@ -88,11 +119,6 @@ fclean:	clean
 		$(RM) $(NAME)
 
 re: fclean all
-
-# push:
-#	git add .
-#	git commit -m "auto-push"
-#	git push
-
+-include $(DEP)
 # BUSCARA QUE ES
 .PHONY: clean fclean all re
