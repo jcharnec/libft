@@ -22,7 +22,6 @@ HEADER = libft.h
 # COMPILAR LOS ARCHIVOS
 # -MMD CREA LAS DEPENDENCIAS
 
-CC = gcc
 CFLAGS = -Werror -Wextra -Wall
 
 OBJ = $(SRC:.c=.o)
