@@ -6,7 +6,7 @@
 #    By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 11:30:24 by jcharnec          #+#    #+#              #
-#    Updated: 2022/09/29 11:12:05 by jcharnec         ###   ########.fr        #
+#    Updated: 2022/10/04 11:20:22 by jcharnec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,7 +63,16 @@ SRC = 	ft_atoi.c \
 		ft_strnstr.c \
 		ft_strrchr.c \
 		ft_tolower.c \
-		ft_toupper.c
+		ft_toupper.c \
+		ft_putchar_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
+		ft_putstr_fd.c \
+		ft_strtrim.c \
+		ft_substr.c \
+		ft_split.c \
+		ft_itoa.c \
+		ft_strjoin.c
 
 # DIRECTORIO QUE CREAMOS PARA GUARDAR LOS .o
 # OBJ_DIR = obj/

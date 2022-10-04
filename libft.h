@@ -6,7 +6,7 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:56:33 by jcharnec          #+#    #+#             */
-/*   Updated: 2022/09/29 11:40:02 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/10/04 13:07:54 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,22 @@ void			*ft_memset(void *b, int c, size_t len);
 char			*ft_strchr(const char *s, int c);
 size_t			ft_strlen(const char *s);
 char			*ft_strrchr(const char *s, int c);
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
-size_t			ft_strlcpy(char *dest, const char *src, size_t size);
-int				ft_strncmp(char *s1, char *s2, unsigned int n);
+unsigned int	ft_strlcat(char *dst, char *src, unsigned int dstsize);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 void			*ft_calloc(size_t count, size_t size);
 char			*ft_strdup(const char *s1);
+void			ft_putchar_fd(char c, int fd);
+void			ft_putendl_fd(char *s, int fd);
+void			ft_putnbr_fd(int n, int fd);
+void			ft_putstr_fd(char *s, int fd);
+char			*ft_strtrim(char const *s1, char const *set);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
+char			**ft_split(char const *str, char c);
+char			*ft_itoa(int n);
+char			*ft_strjoin(char const *s1, char const *s2);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:33:17 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/01 22:33:17 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/04 11:23:06 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ malloc(3)
 #include "libft.h"
 #include <stdlib.h>
 
-int		in_set(char const *s1, char c)
+int	in_set(char const *s1, char c)
 {
 	int	i;
 

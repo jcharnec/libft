@@ -3,17 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 12:43:21 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/30 12:43:21 by marvin           ###   ########.fr       */
+/*   Updated: 2022/10/04 13:29:23 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* El prototipo de la función substr es: char* substr(const char *source, int m, int n)
-
-Devuelve la subcadena de la cadena de origen que comienza en la posición m y terminando 
-en la posición n-1. */
+/* Devuelve la subcadena de la cadena de origen que comienza en 
+la posición m y terminando en la posición n-1. */
 
 #include "libft.h"
 
@@ -23,12 +21,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	size_t	j;
 
-	if (!s || !(str = (char *)malloc(len + 1)))
-		return (NULL);
-	i = start;
+	str = (char *)malloc(len + 1);
+	if (!s)
+		return (0);
+	i = ft_strlen(s);
 	j = 0;
 	while (i < ft_strlen(s) && j < len)
 		str[j++] = s[i++];
 	str[j] = '\0';
 	return (str);
+	free (str);
 }
