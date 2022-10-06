@@ -6,7 +6,7 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 02:21:44 by marvin            #+#    #+#             */
-/*   Updated: 2022/09/29 13:28:15 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/10/04 11:11:36 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		while (i + j < n && s1[i + j] == s2[j] && s2[j] != '\0')
 			j++;
 		if (s2[j] == '\0')
-			return ((unsigned char *)(s1 + i));
+			return ((char *)(s1 + i));
 		i++;
 	}
 	return (NULL);
