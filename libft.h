@@ -6,7 +6,7 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:56:33 by jcharnec          #+#    #+#             */
-/*   Updated: 2022/10/04 13:07:54 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/10/11 12:26:09 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,7 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 char			**ft_split(char const *str, char c);
 char			*ft_itoa(int n);
 char			*ft_strjoin(char const *s1, char const *s2);
+char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 #endif
