@@ -6,7 +6,7 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 22:47:30 by marvin            #+#    #+#             */
-/*   Updated: 2022/10/11 13:34:58 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/10/11 13:39:04 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	**ft_split_words(char const *s, char c, char **s2, int n_words)
 	word = 0;
 	w_len = 0;
 	while (word < n_words)
-	{
+	{		
 		while (s[i] && s[i] == c)
 			i++;
 		while (s[i] && s[i] != c)
