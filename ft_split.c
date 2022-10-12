@@ -10,11 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Reserva (utilizando malloc(3)) un array de strings
-resultante de separar la string ’s’ en substrings
-utilizando el caracter ’c’ como delimitador. El
-array debe terminar con un puntero NULL.
-*/
+/*	Descripcion
+	Reserva (utilizando malloc(3)) un array de strings
+	resultante de separar la string ’s’ en substrings
+	utilizando el caracter ’c’ como delimitador. El
+	array debe terminar con un puntero NULL.
+	Parámetros 
+	s: La string a separar.
+	c: El carácter delimitador.
+	Valor devuelto 
+	El array de nuevas strings resulatente de la
+	separación.
+	NULL si falla la reserva de memoria.*/
 
 #include "libft.h"
 #include <stdlib.h>
@@ -38,6 +45,19 @@ static int	ft_cnt_words(char const *str, char c)
 		}
 	}
 	return (cnt);
+}
+
+static void	ft_free(char *strs)
+{
+	int	i;
+
+	i = 0;
+	while (strs[i] != '\0')
+	{
+		free(strs);
+		i++;
+	}
+	free(strs);
 }
 
 static char	*ft_putword(char *word, char const *s, int i, int w_len)
@@ -77,7 +97,7 @@ static char	**ft_split_words(char const *s, char c, char **s2, int n_words)
 		}
 		s2[word] = (char *)malloc(sizeof(char) * (w_len + 1));
 		if (!s2)
-			return (0);
+			return (ft_free(s2));
 		ft_putword(s2[word], s, i, w_len);
 		w_len = 0;
 		word++;
