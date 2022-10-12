@@ -10,12 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*Descripción Elimina todos los caracteres de la string ’set’
-desde el principio y desde el final de ’s1’, hasta
-encontrar un caracter no perteneciente a ’set’. La
-string resultante se devuelve con una reserva de
-malloc(3)
-*/
+/*	Descripción 
+	Elimina todos los caracteres de la string ’set’
+	desde el principio y desde el final de ’s1’, hasta
+	encontrar un caracter no perteneciente a ’set’. La
+	string resultante se devuelve con una reserva de
+	malloc(3)
+	Parámetros 
+	s1: La string que debe ser recortada.
+	set: Los caracteres a eliminar de la string.
+	Valor devuelto 
+	La string recortada.
+	NULL si falla la reserva de memoria.*/
 
 #include "libft.h"
 #include <stdlib.h>
@@ -61,44 +67,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = '\0';
 	return (str);
 }
-
-// funcion anterior sin control del malloc y const char
-/*
-int		in_set(char const *s1, char c)
-{
-	int	i;
-
-	i = 0;
-	while (s1[i])
-		if (s1[i++] == c)
-			return (1);
-	return (0);
-}
-
-char	*ft_strtrim(char const *s1, char const *set)
-{
-	size_t	i;
-	char	*str;
-	size_t	len;
-	size_t	j;
-
-	i = 0;
-	j = 0;
-	if (!s1)
-		return (NULL);
-	len = ft_strlen(s1);
-	while (in_set(set, s1[i]) && s1[i])
-		i++;
-	while (in_set(set, s1[len - 1]) && (len - 1))
-		len--;
-	if (len < i)
-		len = i;
-	str = malloc(len - i + 1);
-	if (!str)
-		return (NULL);
-	while (i < len)
-		str[j++] = s1[i++];
-	str[j] = '\0';
-	return (str);
-}
-*/

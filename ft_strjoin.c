@@ -10,12 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* Descripción Reserva (con malloc(3)) y devuelve una nueva
-string, formada por la concatenación de ’s1’ y
-’s2’.
-*/
+/*	Reserva (con malloc(3)) y devuelve una nueva
+	string, formada por la concatenación de ’s1’ y
+	’s2’.
+	Parámetros s1: La primera string.
+	s2: La string a añadir a ’s1’.
+	Valor devuelto La nueva string.
+	NULL si falla la reserva de memoria.*/
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
