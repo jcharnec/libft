@@ -10,15 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/*	Descripción Reserva (con malloc(3)) y devuelve una substring de
+/*	Descripción 
+	Reserva (con malloc(3)) y devuelve una substring de
 	la string ’s’.
 	La substring empieza desde el índice ’start’ y
 	tiene una longitud máxima ’len’.
-	Parámetros s: La string desde la que crear la substring.
+	Parámetros 
+	s: La string desde la que crear la substring.
 	start: El índice del caracter en ’s’ desde el que
 	empezar la substring.
 	len: La longitud máxima de la substring.
-	Valor devuelto La substring resultante.
+	Valor devuelto 
+	La substring resultante.
 	NULL si falla la reserva de memoria.*/
 
 #include "libft.h"
