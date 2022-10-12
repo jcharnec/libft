@@ -99,6 +99,7 @@ char	**ft_split(char const *s, char c)
 	return (s2);
 }
 
+// funcion anterior controlando memoria usando free para la memoria
 /* static void	ft_freeup(char *strs)
 {
 	int	i;

@@ -62,6 +62,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
+// funcion anterior sin control del malloc y const char
 /*
 int		in_set(char const *s1, char c)
 {
