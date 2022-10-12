@@ -6,7 +6,7 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 11:56:33 by jcharnec          #+#    #+#             */
-/*   Updated: 2022/10/11 12:26:09 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/10/12 19:46:15 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-//# include<string.h>
 
 int				ft_atoi(const char *str);
 void			ft_bzero(void *s, size_t n);

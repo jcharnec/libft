@@ -6,9 +6,14 @@
 /*   By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 23:12:21 by jcharnec          #+#    #+#             */
-/*   Updated: 2022/09/28 10:40:42 by jcharnec         ###   ########.fr       */
+/*   Updated: 2022/10/12 19:45:42 by jcharnec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* Descripcion 
+función que verifica si el carácter pasado es un alfabeto o numerico. 
+Devuelve un valor distinto de cero si es un alfabeto o numerico; 
+de lo contrario, devuelve 0 */
 
 #include "libft.h"
 

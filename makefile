@@ -6,7 +6,7 @@
 #    By: jcharnec <jcharnec@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/28 11:30:24 by jcharnec          #+#    #+#              #
-#    Updated: 2022/10/11 12:22:01 by jcharnec         ###   ########.fr        #
+#    Updated: 2022/10/12 20:04:56 by jcharnec         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,8 @@ HEADER = libft.h
 
 # COMPILAR LOS ARCHIVOS
 # -MMD CREA LAS DEPENDENCIAS
-
 CFLAGS = -Werror -Wextra -Wall
-
 CC = GCC
-
 OBJ = $(SRC:.c=.o)
 #OBJ = $(addprefix $(OBJ_DIR), $(SRC:.c=.o))
 #OBJBONUS = $(addprefix $(OBJ_DIR), $(SRCBONS: .c=.o))
@@ -34,12 +31,10 @@ OBJ = $(SRC:.c=.o)
 
 # CREAMOS DIRECTORIO -p + SI YA EXISTE NO LO HACE
 MD = mkdir -p
-
 LIB = ar rcs
-
 RM = rm -f
 
-FLAGS = -Werror -Wextra -Wall -MMD
+#FLAGS = -Werror -Wextra -Wall -MMD
 
 # NOMBRE DE LOS ARCHIVOS 
 SRC = 	ft_atoi.c \
@@ -106,32 +101,33 @@ DEP = $(SRC:.c=.d)
 #	$(CC) $(CFLAGS) -c $< -o $@
 
 # -include $(DEP)
-$(NAME):	$(OBJ) $(HEADER)
-			$(LIB) $(NAME) $(OBJ)
+$(NAME):$(OBJ) $(HEADER)
+	$(LIB) $(NAME) $(OBJ)
 
 # BONUS: $(OBJ) $(OBJBONUS)
 #	$(AR) $(NAME) $(OBJBONUS)
 #	@touch $@
 
 # NORMAS
-all : 		$(NAME)
+all : $(NAME)
 
 %.o : %.c
-			$(MD) $(dir $@)
-			$(CC) $(CFLAGS) -c $< -o $@
+	$(MD) $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 	
 
-$(NAME):	$(OBJ) $(HEADER)
-			$(LIB) $(NAME) $(OBJ)
-			@ranlib $(NAME)
+$(NAME):$(OBJ) $(HEADER)
+	$(LIB) $(NAME) $(OBJ)
+	@ranlib $(NAME)
 
-clean:		$(RM) $(OBJ)
+clean:
+	$(RM) $(OBJ)
 
 # BONS ES UN PARCHE PARA QUE NO HAGA RELINK TODO EL RATO
-fclean:		clean
-			$(RM) $(NAME)
+fclean:	clean
+	$(RM) $(NAME)
 
-re:			fclean all
-			-include $(DEP)
+re:
+	-include $(DEP)
 # BUSCARA QUE ES
-.PHONY: 	clean fclean all re
+.PHONY: clean fclean all re
