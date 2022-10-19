@@ -10,10 +10,36 @@
 #                                                                              #
 # **************************************************************************** #
 
-# NOMBRE DEL ARCHIVO
-NAME = libft.a
+# Standard Make variables
 
-CC = gcc
+NAME		= libft.a
+CC 			= gcc
+CFLAGS		= -Wall -Werror -Wextra
+#OBJS		=  ${SRCS:.c=.o}
+HEADER		= libft.h
+AR			= ar rcs
+RM			= rm -Rf ..swp -o .ft_ -o
+SRCS_DIR	= srcs 
+SRCB_DIR	= srcb 
+OBJS_DIR	= objs
+OBJB_DIR	= objb
+BIN_DIR		= bin 
+BIN			= libft.a
+
+# Colors
+
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
+
+# Sources
+
 SRCS = ft_atoi.c \
 	ft_bzero.c \
 	ft_isalnum.c \
@@ -60,27 +86,29 @@ SRCB = ft_lstadd_back.c	\
 	ft_lstmap.c			\
 	ft_lstget_at.c
 
-CFLAGS = -Wall -Werror -Wextra
-OBJS =  ${SRCS:.c=.o}
-HEADER = libft.h
-
-
-RM = rm -Rf ..swp -o .ft_ -o
+OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
+OBJB = $(addprefix $(OBJB_DIR)/, $(SRCB:.c=.o))
 
 %.o : %.c ${HEADER}
 	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} :	${OBJS}
-			ar rcs ${NAME} ${OBJS}
+			@$(AR) ${NAME} ${OBJS}
+			@echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 
 all:		${NAME}
 
+bonus:	$(OBJB)
+
 clean:
-			${RM} ${OBJS} ${OBJSBONUS}
+			@${RM} ${OBJS} ${OBJB}
+			@echo "$(BLUE)Libft objects files cleaned!$(DEF_COLOR)"
 
 fclean:	clean
-			${RM} ${NAME} bonus
+			@${RM} ${NAME} bonus
+			@echo "$(CYAN)Libft executable files cleaned!$(DEF_COLOR)"
 
 re:		fclean all
+		@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
 
 .PHONY = all clean fclean re bonus
