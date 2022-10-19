@@ -24,7 +24,6 @@
 	NULL si falla la reserva de memoria.*/
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	ft_setcheck(char c, char const *set)
 {

@@ -20,7 +20,6 @@
 	La subcadena. NULL si falla la asignación.. */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {

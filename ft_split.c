@@ -24,7 +24,6 @@
 	NULL si falla la reserva de memoria.*/
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	ft_cnt_words(char const *str, char c)
 {

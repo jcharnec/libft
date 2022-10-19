@@ -49,6 +49,17 @@ SRCS = ft_atoi.c \
 	ft_strmapi.c \
 	ft_striteri.c \
 
+SRCB = ft_lstadd_back.c	\
+	ft_lstadd_front.c	\
+	ft_lstclear.c		\
+	ft_lstdelone.c		\
+	ft_lstiter.c		\
+	ft_lstlast.c		\
+	ft_lstsize.c		\
+	ft_lstnew.c			\
+	ft_lstmap.c			\
+	ft_lstget_at.c
+
 CFLAGS = -Wall -Werror -Wextra
 OBJS =  ${SRCS:.c=.o}
 HEADER = libft.h
