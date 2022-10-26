@@ -89,26 +89,26 @@ SRCB = ft_lstadd_back.c	\
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
 OBJB = $(addprefix $(OBJB_DIR)/, $(SRCB:.c=.o))
 
-%.o : %.c ${HEADER}
-	${CC} ${CFLAGS} -c $< -o $@
+%.o 	:	%.c ${HEADER}
+			${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME} :	${OBJS}
 			@$(AR) ${NAME} ${OBJS}
 			@echo "$(GREEN)Libft compiled!$(DEF_COLOR)"
 
-all:		${NAME}
+all		:	${NAME}
 
-bonus:	$(OBJB)
+bonus	:	$(OBJB)
 
-clean:
+clean	:
 			@${RM} ${OBJS} ${OBJB}
 			@echo "$(BLUE)Libft objects files cleaned!$(DEF_COLOR)"
 
-fclean:	clean
+fclean	:	clean
 			@${RM} ${NAME} bonus
 			@echo "$(CYAN)Libft executable files cleaned!$(DEF_COLOR)"
 
-re:		fclean all
-		@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
+re		:	fclean all
+			@echo "$(GREEN)Cleaned and rebuilt everything for libft!$(DEF_COLOR)"
 
-.PHONY = all clean fclean re bonus
+.PHONY	=	all clean fclean re bonus
