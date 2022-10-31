@@ -17,7 +17,6 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <string.h>
-#include <type.h>
 
 /* Implementation of linked list */
 typedef struct s_list
@@ -63,7 +62,7 @@ char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 t_list			*ft_lstnew(void *content);
-inf				t_lstsize(t_list *lst);
+int				t_lstsize(t_list *lst);
 void			ft_lstclear(t_list **lst, void (*del)(void*));
 void			ft_lastadd_back(t_list **lst, t_list *new);
 void			ft_lstadd_front(t_list **lst, t_list *new);
